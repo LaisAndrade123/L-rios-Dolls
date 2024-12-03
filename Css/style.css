@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Parkinsans:wght@300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Parkinsans:wght@300..800&display=swap');
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo Geral */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #fff;
+  position: relative;
+  height: 72px; /* Extende o menu para a altura da página */
+  flex-direction: column; /* Coloca os itens verticalmente */
+}
+
+
+
+/* Logo */
+.logo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* Links de navegação */
+.nav-links {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  margin-top: 15px;
+  margin-right: 80%;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1.1em;
+  position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #470675;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #7b13c5;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a:focus::after {
+  transform: scaleX(1);
+}
+
+/* Botões de Login e Sign Up */
+.menu-buttons {
+  display: flex;
+  gap: 1em;
+  position: absolute;
+  right: 2em;
+  margin-top: 12px;
+}
+
+.menu-buttons .btn-login,
+.menu-buttons .btn-signup {
+  padding: 0.5em 1.2em;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-login {
+  background-color: #e1e1e1;
+  color: #4a4a4a;
+}
+
+.btn-login:hover {
+  background-color: #c4c4c4;
+}
+
+.btn-signup {
+  background-color: #6A0DAD;
+  color: #fff;
+}
+
+.btn-signup:hover {
+  background-color: #550a97;
+}
+
+
+    
+  /* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url(../img/crianças.jpg); /* Imagem de fundo estática */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.343); /* Sombra ao redor do banner */
+  overflow: hidden;
+}
+
+/* Texto com fundo semi-transparente e sombra roxa */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.296); /* Fundo preto semi-transparente */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner-overlay h1 {
+  font-size: 4.2rem;
+  margin-right: 900px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.banner-overlay p {
+  font-size: 1.2em;
+  margin-right: 800px;
+}
+
+.saiba-mais-btn {
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  border: none;
+  border-radius: 30px;
+  background-color: #a44cd3; /* Cor roxa do botão */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 900px;
+}
+
+.saiba-mais-btn:hover {
+  background-color: #550a97;
+}
+
+
+
+/* Estrutura básica */
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilos das imagens */
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+/* Imagem */
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+/* Texto sobreposto */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+/* Estilo do texto */
+.overlay p {
+  font-size: 1.2em;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Seção de Descrição das Bonecas */
+.descricao-bonecas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 50px auto; /* Centraliza verticalmente */
+  max-width: 800px; /* Limita a largura do texto */
+  padding: 20px;
+}
+
+.descricao-bonecas h2 {
+  font-size: 2em;
+  color: #470675;
+  margin-bottom: 0.5em;
+}
+
+.descricao-bonecas p {
+  font-size: 1.2em;
+  color: #4a4a4a;
+  line-height: 1.5em;
+}
+
+ /*  Seção de Catálogo */
+/* Estilo da Seção Catalogo */
+.catalogo {
+  text-align: center;
+  margin: 10px auto; /* Margem superior e inferior */
+}
+
+/* Container do catálogo */
+
+.catalogo h2 {
+  font-size: 3rem;
+  color: #470675;
+  margin-bottom: 0.5em;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.catalogo p {
+  font-size: 1.2em;
+  color: #4a4a4a;
+  margin-bottom: 1.5em;
+  font-family: "Parkinsans", sans-serif;
+}
+
+.catalogo-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 20px; /* Espaço entre os itens */
+  max-width: 1500px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+.titulo {
+  font-family: "Bebas Neue", sans-serif;
+  color: #470675;
+  font-size: 42PX;
+}
+
+
+
+/* Estilo do item */
+.item {
+  background: #c0a9c8;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Oculta partes que saem do cartão */
+  text-align: center;
+  width: 250px; /* Largura fixa para os cartões */
+  transition: transform 0.2s; /* Transição suave para o efeito de hover */
+  margin-top: -50px;
+}
+
+.item:hover {
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Imagem da boneca */
+.item img {
+  width: 100%;
+  height: 200px; /* Altura fixa para as imagens */
+  object-fit: cover; /* Faz a imagem cobrir o espaço */
+}
+
+/* Informações da boneca */
+.info {
+  padding: 15px; /* Espaçamento interno */
+}
+
+.info h3 {
+  font-size: 1.5em;
+  color: #54386c;
+}
+
+.info p {
+  font-size: 1em;
+  color: #664e79;
+  margin: 10px 0; /* Margem acima e abaixo do texto */
+}
+
+/* Botão de comprar */
+.btn-comprar {
+  background-color: #6A0DAD; /* Cor do botão */
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave para o hover */
+}
+
+.btn-comprar:hover {
+  background-color: #550a97; /* Cor do botão ao passar o mouse */
+}
+
+
+
+  
+  /* Rodapé */
+  footer {
+    background-color: #e6e6e6;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #800080;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+
+ /* carrossel */
+
+/* Estilos para o carrossel */
+.carousel {
+  width: 100%; /* Carrossel ocupa toda a largura da tela */
+  overflow: hidden; /* Garante que não ultrapasse os limites */
+}
+
+.carousel-inner {
+  display: flex;
+  justify-content: flex-start; /* Alinha as imagens à esquerda */
+  transition: transform 0.5s ease-in-out; /* Suaviza a transição */
+}
+
+.carousel-row {
+  display: flex;
+  justify-content: flex-start; /* As imagens são alinhadas à esquerda */
+  width: 100%; /* O carrossel ocupa a largura total da tela */
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.carousel-item img {
+  width: 33.33%; /* Cada imagem ocupa 1/3 da largura total do carrossel */
+  height: 400px; /* Altura fixa para as imagens */
+  object-fit: cover; /* Faz as imagens cobrir a área sem distorcer */
+  margin-right: 10px; /* Espaço entre as imagens */
+}
+
+/* Estilos para os controles de navegação */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: black; /* Cor dos ícones de controle */
+}
+
+
+/* Estilo da Seção Informações */
+.informacoes {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  text-align: center;
+  color: #333;
+}
+
+.informacoes h2 {
+  font-size: 2.5em;
+  color: #470675;
+  margin-bottom: 0.5em;
+}
+
+.informacoes p {
+  font-size: 1.2em;
+  color: #4a4a4a;
+  max-width: 800px;
+  margin: 0 auto 2em;
+  line-height: 1.6;
+}
+
+.informacoes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.item-info {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.item-info:hover {
+  transform: translateY(-10px);
+}
+
+.item-info i {
+  font-size: 2em;
+  color: #6A0DAD;
+  margin-bottom: 0.5em;
+}
+
+.item-info h3 {
+  font-size: 1.5em;
+  color: #470675;
+  margin-bottom: 0.5em
+
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1200px) {
+  .carousel-item img {
+    width: 33.33%; /* Para garantir que a largura seja proporcional */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    width: 80%; /* Ajuste para telas pequenas, ocupando 80% da tela */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item img {
+    width: 100%; /* Para telas muito pequenas, as imagens ocupam 100% da tela */
+  }
+}
